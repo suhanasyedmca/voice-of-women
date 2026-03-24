@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+@theme {
+  --color-primary-light: #FF6B6B;
+  --color-primary: #C2185B;
+  --color-primary-dark: #8E0E4D;
+  --color-secondary-light: #FAF0E6;
+  --color-secondary: #F4C430;
+  --color-secondary-dark: #D4A820;
+  --color-accent: #00897B;
+  --color-dark: #1A0A2E;
+  --color-dark-card: #2A1A4A;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+@layer base {
+  body {
+    @apply font-body text-[#1A0A2E] antialiased;
+    background-color: #FAF0E6;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(335,84%,85%,0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(45,90%,85%,0.5) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(174,100%,85%,0.5) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(274,80%,85%,0.5) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-[#C2185B];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-full font-medium shadow-md hover:bg-primary-dark hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary-dark px-6 py-2 rounded-full font-medium shadow-md hover:bg-secondary-dark hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-full font-medium hover:bg-primary hover:text-white transition-all transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+  }
+
+  /* SOS Button Animation */
+  .sos-pulse {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.dark body {
+  @apply text-[#FAF0E6];
+  background-color: #1A0A2E;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(335,84%,15%,0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(45,90%,15%,0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(174,100%,15%,0.5) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(274,80%,15%,0.5) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.dark .card {
+  @apply bg-dark-card border-none shadow-lg outline outline-1 outline-white/5;
+}
+
+.dark .input-field {
+  @apply bg-dark border-gray-700 text-white focus:ring-primary-light;
+}

@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "_id": "zz6ti",
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "9876543210",
+      "gender": "Female",
+      "age": "21",
+      "role": "Student",
+      "location": "Bangalore",
+      "password": "$2a$10$xKOcLbsd0Zb6W2USiJMmQ.OvYOHDgdwL57hXz/OpsD/9IHzTK/dKG",
+      "isAadhaarVerified": true,
+      "aadhaarLastFour": "XXXX-XXXX-1234"
+    },
+    {
+      "_id": "lbr7y",
+      "name": "text",
+      "email": "text@gmail.com",
+      "phone": "1234557890",
+      "gender": "Female",
+      "age": "21",
+      "role": "Student",
+      "location": "vizag",
+      "password": "$2a$10$kiI4fujrZUFfkQnwKZI36OftIFf5n8lX7IM8O0TlR8Z0PTV.4omqe",
+      "isAadhaarVerified": true,
+      "aadhaarLastFour": "XXXX-XXXX-1234"
+    }
+  ],
+  "otps": []
+}
